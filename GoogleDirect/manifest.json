@@ -1,7 +1,7 @@
 {
-  "name": "谷歌搜索直开",
-  "version": "1.0",
-  "description": "减小被墙的烦恼：直接打开Google搜索结果中的链接，跳过Google的重定向",
+  "name": "谷歌极速搜索",
+  "version": "0.1",
+  "description": "减小被墙的烦恼：直接打开Google搜索结果中的链接，跳过Google的重定向。",
   "browser_action": {
     "default_icon": "images/icon_24.png"
   },
@@ -9,10 +9,11 @@
       "128": "images/icon_128.png"
    },
   "options_page": "options.html",
+  "background_page": "background.html",
   "permissions": [
+		"contextMenus",
         "tabs",
         "http://*.google.*",
 		"https://*.google.*"
     ]
-
 }
