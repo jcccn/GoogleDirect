@@ -1,0 +1,63 @@
+﻿<html>
+    <head>
+        <title>
+            GoogleDirect选项
+        </title>
+    </head>
+    <script type="text/javascript">
+        function save_options() {
+			var select = document.getElementById("direct_click_select");
+			var selectedValue = select.children[select.selectedIndex].value;
+			localStorage["direct_click_value"] = selectedValue;
+            var label_save_status = document.getElementById("label_save_status");
+            label_save_status.innerText = "保存成功。";
+            setTimeout(function() {
+                label_save_status.innerHTML = "";
+            },
+            1000);
+        }
+		
+        function restore_options() {
+			var selectedValue = localStorage["direct_click_value"];
+			if (selectedValue) {
+				var select = document.getElementById("direct_click_select");
+				for (var i = 0; i < select.children.length; i++) {
+					var child = select.children[i];
+					if (child.value == selectedValue) {
+						child.selected = "true";
+						break;
+					}
+				}
+			}
+        }
+    </script>
+    
+    <body onload="restore_options()" style="background-color:#a7e3ed;">
+        <label style="position:absolute;left:400px;top:80px;font-weight:bold;">
+            选项设置：
+        </label>
+        <table style="position:absolute;left:400px;top:100px;">
+            <tr>
+                <td>
+                    单击直达开关：
+                </td>
+                <td>
+                    <select id="direct_click_select">
+						<option value="on">开</option>
+						<option value="off">关</option>
+					</select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="save_options()">
+                        保存
+                    </button>
+                    <label id="label_save_status">
+                    </label>
+                </td>
+            </tr>
+        </table>
+    </body>
+
+</html>
