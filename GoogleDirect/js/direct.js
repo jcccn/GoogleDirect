@@ -24,5 +24,5 @@ function godirect(info, tab){
 	window.open(real_url);
 }
 
-var menu_title = "极速打开";
+var menu_title = "直接打开Google结果";
 var right_direct = chrome.contextMenus.create({"title": menu_title,"contexts":["link"],"onclick":godirect});

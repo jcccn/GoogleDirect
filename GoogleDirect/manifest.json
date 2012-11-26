@@ -1,7 +1,8 @@
 {
   "name": "谷歌极速搜索",
-  "version": "0.1",
-  "description": "减小被墙的烦恼：直接打开Google搜索结果中的链接，跳过Google的重定向。",
+  "version": "0.2",
+  "manifest_version": 2,
+  "description": "减小被墙的烦恼：右键直接打开Google搜索结果中的链接，跳过Google的重定向。",
   "browser_action": {
     "default_icon": "images/icon_24.png"
   },
@@ -9,11 +10,15 @@
       "128": "images/icon_128.png"
    },
   "options_page": "options.html",
-  "background_page": "background.html",
+  "background": {
+    "page": "background.html"
+    },
   "permissions": [
 		"contextMenus",
-        "tabs",
-        "http://*.google.*",
-		"https://*.google.*"
+    "tabs",
+    "http://*.google.com/",
+		"https://*.google.com/",
+    "http://*.google.com.hk/",
+    "https://*.google.com.hk/"
     ]
 }
